@@ -16,10 +16,12 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route("/clinical")
+@app.route("/clinical_calc", methods=['GET'])
 def clinical_input():
     option = request.form['customRadioInline1']
     return render_template("clinical_calc.html", option)
+
+
 
 # @app.route("/clinical_calc.html")
 # def clinical_input():
@@ -27,4 +29,5 @@ def clinical_input():
 #     print(option)
 #     return option
 
-    
+if __name__ == "__main__":
+    app.run(debug=True)    
