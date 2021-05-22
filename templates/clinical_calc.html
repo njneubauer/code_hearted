@@ -21,29 +21,29 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Risk Factor Calculator</a>
+                <a class="nav-link" href="patient_calc.html">Risk Factor Calculator</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Clinical Calculator</a>
+                <a class="nav-link active" href="clinical_calc.html">Clinical Calculator</a>
               </li>
             </ul>
           </div>
         </div>
     </nav>
         
-    <form>
+    <form action= "{{ url_for('/clinical_calc') }}" method="POST">
         <div class="container" style="padding-top: 50px;">
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Age</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Range: 40-95">
                 </div>
             </div>
             <div class="row">
-                <p class="col-4">Gender Assigned at Birth</p>
+                <p class="col-4">Gender (assigned at birth)</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
                     <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline1">Male</label>
@@ -65,31 +65,71 @@
                 </div>
             </div>
             <div class="row">
+                <p class="col-4">Current Smoker?</p>
+                <div class="col-4 custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline3" name="customRadioInline3" class="custom-control-input" value="1">
+                    <label class="custom-control-label" for="customRadioInline3">Yes</label>
+                </div>
+                <div class="col-4 custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline4" name="customRadioInline3" class="custom-control-input" value="0">
+                    <label class="custom-control-label" for="customRadioInline4">No</label>
+                </div>
+            </div>
+            <div class="row">
                 <p class="col-4">Diabetes?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline5" name="customRadioInline3" class="custom-control-input" value="1">
+                    <input type="radio" id="customRadioInline5" name="customRadioInline4" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline5">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline6" name="customRadioInline3" class="custom-control-input" value="0">
+                    <input type="radio" id="customRadioInline6" name="customRadioInline4" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline6">No</label>
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Anemia?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline7" name="customRadioInline4" class="custom-control-input" value="1">
+                    <input type="radio" id="customRadioInline7" name="customRadioInline5" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline7">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline8" name="customRadioInline4" class="custom-control-input" value="0">
+                    <input type="radio" id="customRadioInline8" name="customRadioInline5" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline8">No</label>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Creatine Phosphate Level</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Ejection Fraction (%)</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Range: 14-80">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Platelets</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Serum Sodium</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Time</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
     </form>
-
-
 
 
 
