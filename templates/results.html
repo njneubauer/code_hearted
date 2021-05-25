@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/#6-doughnut-chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Heart Failure Calc</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4e4e4e;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Heart Failure Mortality Predictor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Risk Factor Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clinical Calculator</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <p></p>
+    The value of age: {{ age }} <p></p>
+
+    The value of gender: {{ gender }} <p></p>
+
+    The value of smoker: {{ smoker }} <p></p>
+
+    The value of anemic: {{ anemic }} <p></p>
+
+    The value of diabetic: {{ diabetic }} <p></p>
+
+    The value of highbp: {{ highbp }} <p></p>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
