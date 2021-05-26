@@ -34,108 +34,106 @@
         </div>
     </nav>
         
-    <form action= "{{ url_for('clinical') }}" method="POST">
+    <form action= "/clinical_data" method="POST">
         <div class="container" style="padding-top: 50px;">
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Age</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Range: 40-95">
+                    <input type="text" class="form-control mb-2" id="age" placeholder="Range: 40-95">
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Gender (assigned at birth)</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="1">
+                    <input type="radio" id="gender" name="gender" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline1">Male</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="0">
+                    <input type="radio" id="gender" name="gender" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline2">Female</label>
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Hypertension?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline3" name="customRadioInline2" class="custom-control-input" value="1">
+                    <input type="radio" id="hypertension" name="hypertension" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline3">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline4" name="customRadioInline2" class="custom-control-input" value="0">
+                    <input type="radio" id="hypertension" name="hypertension" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline4">No</label>
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Current Smoker?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline3" name="customRadioInline3" class="custom-control-input" value="1">
+                    <input type="radio" id="smoker" name="smoker" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline3">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline4" name="customRadioInline3" class="custom-control-input" value="0">
+                    <input type="radio" id="smoker" name="smoker" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline4">No</label>
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Diabetes?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline5" name="customRadioInline4" class="custom-control-input" value="1">
+                    <input type="radio" id="diabetes" name="diabetes" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline5">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline6" name="customRadioInline4" class="custom-control-input" value="0">
+                    <input type="radio" id="diabetes" name="diabetes" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline6">No</label>
                 </div>
             </div>
             <div class="row">
                 <p class="col-4">Anemia?</p>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline7" name="customRadioInline5" class="custom-control-input" value="1">
+                    <input type="radio" id="anemia" name="anemia" class="custom-control-input" value="1">
                     <label class="custom-control-label" for="customRadioInline7">Yes</label>
                 </div>
                 <div class="col-4 custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline8" name="customRadioInline5" class="custom-control-input" value="0">
+                    <input type="radio" id="anemia" name="anemia" class="custom-control-input" value="0">
                     <label class="custom-control-label" for="customRadioInline8">No</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Creatine Phosphate Level</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                    <input type="text" class="form-control mb-2" id="creatine_phosphate" name="creatine_phosphate" placeholder="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Ejection Fraction (%)</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Range: 14-80">
+                    <input type="text" class="form-control mb-2" id="ejection_fraction" name='ejection_fraction' placeholder="Range: 14-80">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Platelets</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                    <input type="text" class="form-control mb-2" id="platelets" name='platelets' placeholder="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Serum Sodium</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                    <input type="text" class="form-control mb-2" id="sodium" name='sodium' placeholder="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Time</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+                    <label class="sr-only" for="inlineFormInput">Day since last office visit</label>
+                    <input type="text" class="form-control mb-2" id="office_visit" name='office_visit' placeholder="">
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit" onclick="data_validation()">Submit form</button>
         </div>
     </form>
 
-
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    <script src='../static/data_validation.js'></script>
   </body>
 
 
