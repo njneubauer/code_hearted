@@ -1,33 +1,47 @@
-from flask import Flask, request, render_template
-import requests
-## other dependencies
-# import numpy as np
-# import pickle
+from flask import Flask, request, render_template, jsonify
 
-# Create instance of Flask
+
 app = Flask(__name__)
-# option = request.form['customRadioInline1']
 
-# Establish connection to machine learning
-# model = 
+def calc_death_probability(data):
+    model = sklearn.model.load("whatever.model")
+    return model.predict(data)
 
-# Route to render html
 @app.route("/")
 def home():
     return render_template('index.html')
 
-@app.route("/clinical_calc", methods=['GET'])
-def clinical_input():
-    option = request.form['customRadioInline1']
-    return render_template("clinical_calc.html", option)
+@app.route('/clinical')
+def clinical():
+    return render_template('clinical_calc.html')
 
+@app.route('/patient')
+def patient():
+    return render_template('patient_calc.html')
 
+@app.route('/data', methods=['GET','POST'])
+def search():
+    # age = request.form['age']
+    gender = request.form['gender']
+    smoker = request.form['smoker']
+    anemic = request.form['anemic']   
+    diabetic = request.form['diabetic'] 
+    highbp = request.form['highbp']
+    
+    data = [gender, smoker, anemic, diabetic, highbp]
 
-# @app.route("/clinical_calc.html")
-# def clinical_input():
-#     option = request.form['customRadioInline1']
-#     print(option)
-#     return option
+    # print(f"=======================")
+    # # print(f"age={age}  gender={gender}  smoker={smoker}")
+    # print(f"anemic={anemic}  diabetic={diabetic}  highbp={highbp}")
+    # print(f"=======================")
+    
+    # Call to Machine Language 
+    # Return information back from Machine Language 
+
+    prob = calc_death_probability(data)
+
+    #Plug  Machine learning values to send to a results.html screen
+    return render_template('patient_calc.html', data=data, prob=prob)
 
 if __name__ == "__main__":
-    app.run(debug=True)    
+    app.run(debug=True)
