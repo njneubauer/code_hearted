@@ -1,10 +1,11 @@
 from flask import Flask, request, render_template, jsonify
-
+import joblib
+import pandas as pd
 
 app = Flask(__name__)
 
 def calc_death_probability(data):
-    model = sklearn.model.load("whatever.model")
+    model = joblib.load("simple_model.sav")
     return model.predict(data)
 
 @app.route("/")
@@ -21,15 +22,19 @@ def patient():
 
 @app.route('/data', methods=['GET','POST'])
 def search():
-    # age = request.form['age']
-    gender = request.form['gender']
-    smoker = request.form['smoker']
-    anemic = request.form['anemic']   
-    diabetic = request.form['diabetic'] 
-    highbp = request.form['highbp']
-    
-    data = [gender, smoker, anemic, diabetic, highbp]
+    age = request.form['age']
+    sex = request.form['sex']
+    smoker = request.form['smoking']
+    anaemia = request.form['anaemia']   
+    diabetes = request.form['diabetes'] 
+    highbp = request.form['high_blood_pressure']
+   
 
+    dict = {'age': age, 'anaemia': anaemia, 'diabetes': diabetes, 'high_blood_pressure': highbp, 'sex': sex, 'smoking': smoker}
+    
+    data = pd.DataFrame(dict)
+    
+    
     # print(f"=======================")
     # # print(f"age={age}  gender={gender}  smoker={smoker}")
     # print(f"anemic={anemic}  diabetic={diabetic}  highbp={highbp}")
