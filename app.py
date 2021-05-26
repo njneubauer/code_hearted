@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def calc_death_probability(data):
     model = joblib.load("simple_model.sav")
-    return model.predict(data)
+    return model.predict_proba(data)
 
 @app.route("/")
 def home():
@@ -34,10 +34,10 @@ def clinical_data():
     sodium = request.form['sodium']
     office_vist = request.form['office_visit']
 
-    clinical_data_dict = {'age':age, 'anemia':anemia, 'creatine_phosphokinase':creatine, 'diabetes':diabetes, 'ejection_fraction': ejection_fraction, 
-                    'high_blood_pressure': hypertension, 'platelets':platelets, 'serum_creatinine':creatine, 'serum_sodium':sodium, 'sex':gender, 'smoking':smoker, 'time':office_vist}
+    clinical_data_dict = {'age':age, 'anemia':anemia, 'creatine_phosphokinase':creatine, 'diabetes':diabetes, 'ejection_fraction': ejection_fraction,'high_blood_pressure': hypertension, 
+                          'platelets':platelets, 'serum_creatinine':creatine, 'serum_sodium':sodium, 'sex':gender, 'smoking':smoker, 'time':office_vist}
     
-    clinical_data = pd.DataFrame(clinical_data_dict)
+    clinical_data = pd.DataFrame(clinical_data_dict, index=[0])
 
     print(clinical_data)
 
@@ -57,20 +57,13 @@ def search():
     data = pd.DataFrame(dict)
 
     print(data)
-    
-    # print(f"=======================")
-    # # print(f"age={age}  gender={gender}  smoker={smoker}")
-    # print(f"anemic={anemic}  diabetic={diabetic}  highbp={highbp}")
-    # print(f"=======================")
-    
-    # Call to Machine Language 
-    # Return information back from Machine Language 
 
     prob = calc_death_probability(data)
 
-    print(prob)
+    print(f'Result: {prob[0][0]}')
     #Plug  Machine learning values to send to a results.html screen
     return render_template('patient_calc.html', data=data, prop=prob)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
