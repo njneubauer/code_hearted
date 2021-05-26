@@ -52,10 +52,11 @@ def search():
     diabetes = request.form['diabetic'] 
     highbp = request.form['highbp']
     
-    dict = {'age': age, 'anaemia': anemia, 'diabetes': diabetes, 'high_blood_pressure': highbp, 'sex': sex, 'smoking': smoker}
+    dict = {'age': [age], 'anaemia': [anemia], 'diabetes': [diabetes], 'high_blood_pressure': [highbp], 'sex': [sex], 'smoking': [smoker]}
     
     data = pd.DataFrame(dict)
-    
+
+    print(data)
     
     # print(f"=======================")
     # # print(f"age={age}  gender={gender}  smoker={smoker}")
@@ -65,10 +66,11 @@ def search():
     # Call to Machine Language 
     # Return information back from Machine Language 
 
-    # prob = calc_death_probability(data)
+    prob = calc_death_probability(data)
 
+    print(prob)
     #Plug  Machine learning values to send to a results.html screen
-    return render_template('patient_calc.html', data=data)
+    return render_template('patient_calc.html', data=data, prop=prob)
 
 if __name__ == "__main__":
     app.run(debug=True)
