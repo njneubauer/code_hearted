@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 def calc_death_probability(data):
-    model = sklearn.model.load("whatever.model")
+    model = joblib.load("simple_model.sav")
     return model.predict(data)
 
 @app.route("/")
@@ -46,14 +46,22 @@ def clinical_data():
 @app.route('/data', methods=['GET','POST'])
 def search():
     age = request.form['age']
-    gender = request.form['gender']
+    sex = request.form['gender']
     smoker = request.form['smoker']
-    anemic = request.form['anemic']   
-    diabetic = request.form['diabetic'] 
+    anemia = request.form['anemic']   
+    diabetes = request.form['diabetic'] 
     highbp = request.form['highbp']
     
-    data = [gender, smoker, anemic, diabetic, highbp]
-
+    dict = {'age': age, 'anaemia': anemia, 'diabetes': diabetes, 'high_blood_pressure': highbp, 'sex': sex, 'smoking': smoker}
+    
+    data = pd.DataFrame(dict)
+    
+    
+    # print(f"=======================")
+    # # print(f"age={age}  gender={gender}  smoker={smoker}")
+    # print(f"anemic={anemic}  diabetic={diabetic}  highbp={highbp}")
+    # print(f"=======================")
+    
     # Call to Machine Language 
     # Return information back from Machine Language 
 
