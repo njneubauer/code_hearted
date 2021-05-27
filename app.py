@@ -43,7 +43,7 @@ def clinical_data():
 
     return render_template('clinical_calc.html', clinical_data=clinical_data)
 
-@app.route('/data', methods=['GET','POST'])
+@app.route('/patient_data', methods=['GET','POST'])
 def search():
     age = request.form['age']
     sex = request.form['gender']
@@ -61,8 +61,9 @@ def search():
     prob = calc_death_probability(data)
 
     print(f'Result: {prob[0][0]}')
+    
     #Plug  Machine learning values to send to a results.html screen
-    return render_template('patient_calc.html', data=data, prop=prob)
+    return render_template('patient_calc.html', data=data, prob=prob)
 
 
 if __name__ == "__main__":
