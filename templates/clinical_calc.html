@@ -37,12 +37,12 @@
         </div>
     </nav>
         
-    <form action= "/clinical_data" method="POST">
+    <form name="form" action= "/clinical_data" method="POST">
         <div class="container" style="padding-top: 50px;">
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Age</label>
-                    <input type="text" class="form-control mb-2" id="age" name="age" placeholder="Range: 40-95">
+                    <input type="text" class="form-control mb-2" id="age" name="age" placeholder=">30">
                 </div>
             </div>
             <div class="row">
@@ -103,30 +103,30 @@
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Creatine Phosphate Level</label>
-                    <input type="text" class="form-control mb-2" id="creatine_phosphate" name="creatine_phosphate" placeholder="">
+                    <input type="text" class="form-control mb-2" id="creatine_phosphate" name="creatine_phosphate" placeholder="Normal Range 20-200">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Ejection Fraction (%)</label>
-                    <input type="text" class="form-control mb-2" id="ejection_fraction" name='ejection_fraction' placeholder="Range: 14-80">
+                    <input type="text" class="form-control mb-2" id="ejection_fraction" name='ejection_fraction' placeholder="Normal Range: 55-70">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Platelets</label>
-                    <input type="text" class="form-control mb-2" id="platelets" name='platelets' placeholder="">
+                    <input type="text" class="form-control mb-2" id="platelets" name='platelets' placeholder="Normal Range: 150k-450k">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Serum Sodium</label>
-                    <input type="text" class="form-control mb-2" id="sodium" name='sodium' placeholder="">
+                    <input type="text" class="form-control mb-2" id="sodium" name='sodium' placeholder="Normal Range: 135-145">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Day since last office visit</label>
+                    <label class="sr-only" for="inlineFormInput">Days since last office visit</label>
                     <input type="text" class="form-control mb-2" id="office_visit" name='office_visit' placeholder="">
                 </div>
             </div>
@@ -136,6 +136,8 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="https://browser.sentry-cdn.com/6.4.1/bundle.min.js" integrity="sha384-THoc7rflwZFKTdZNgv6jLFFDn299Uv3t1SW5B4yGLvLiCRTYP9ys6vXZcMl95TQF" crossorigin="anonymous"></script>
     <script src='../static/data_validation.js'></script>
   </body>
 
