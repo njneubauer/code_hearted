@@ -47,7 +47,8 @@
       <div class="row">
         <p class="col-4"> What is your Age? (40 - 95) </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="text" id="age" name="age" class="custom-control-input input" value="{{ data['age'] }}">
+          <input type="text" id="age" name="age" class="custom-control-input input"
+            value="{% if data is defined %}{{ data['age'] }}{% endif %}">
         </div>
       </div>
 
@@ -59,12 +60,12 @@
 
         <p class="col-4"> Gender at Birth? </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="gender" name="gender" class="custom-control-input" value="1" {% if data['sex'] == '1' %} checked {% endif %}>
+          <input type="radio" id="gender" name="gender" class="custom-control-input" value="1" {% if data is defined and data['sex'] == '1' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline1">Male</label>
         </div>
 
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="gender" name="gender" class="custom-control-input" value="0" {% if data['sex'] == '0' %} checked {% endif %}>
+          <input type="radio" id="gender" name="gender" class="custom-control-input" value="0" {% if data is defined and data['sex'] == '0' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline2">Female</label>
         </div>
 
@@ -76,12 +77,12 @@
 
         <p class="col-4 text-right"> Are you a Smoker? </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="smoker" name="smoker" class="custom-control-input text-leftt" value="1" {% if data['smoker'] == '1' %} checked {% endif %}>
+          <input type="radio" id="smoker" name="smoker" class="custom-control-input text-leftt" value="1" {% if data is defined and data['smoker'] == '1' %} checked {% endif %}>
           <label class="custom-control-label text-right" for="customRadioInline3">Yes</label>
         </div>
 
         <div class="col-6 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="smoker" name="smoker" class="custom-control-input text-left" value="0" {% if data['smoker'] == '0' %} checked {% endif %}>
+          <input type="radio" id="smoker" name="smoker" class="custom-control-input text-left" value="0" {% if data is defined and data['smoker'] == '0' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline4">No</label>
         </div>
 
@@ -93,12 +94,12 @@
 
         <p class="col-4"> Are you Anemic? </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="anemic" name="anemic" class="custom-control-input" value="1" >
+          <input type="radio" id="anemic" name="anemic" class="custom-control-input" value="1" {% if data is defined and data['anemia'] == '1' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline5">Yes</label>
         </div>
 
         <div class="col-6 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="anemic" name="anemic" class="custom-control-input" value="0">
+          <input type="radio" id="anemic" name="anemic" class="custom-control-input" value="0" {% if data is defined and data['anemia'] == '0' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline6">No</label>
         </div>
 
@@ -110,12 +111,12 @@
 
         <p class="col-4"> Are you Diabetic? </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="diabetic" name="diabetic" class="custom-control-input" value="1" >
+          <input type="radio" id="diabetic" name="diabetic" class="custom-control-input" value="1" {% if data is defined and data['diabetes'] == '1' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline7"> Yes </label>
         </div>
 
         <div class="col-6 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="diabetic" name="diabetic" class="custom-control-input" value="0" >
+          <input type="radio" id="diabetic" name="diabetic" class="custom-control-input" value="0" {% if data is defined and data['diabetes'] == '0' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline8"> No </label>
         </div>
       </div>
@@ -126,12 +127,12 @@
 
         <p class="col-4"> Do you have High Blood Pressure? </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="highbp" name="highbp" class="custom-control-input" value="1" >
+          <input type="radio" id="highbp" name="highbp" class="custom-control-input" value="1" {% if data is defined and data['highbp'] == '1' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline9"> Yes </label>
         </div>
 
         <div class="col-6 custom-control custom-radio custom-control-inline">
-          <input type="radio" id="highbp" name="highbp" class="custom-control-input" value="0" >
+          <input type="radio" id="highbp" name="highbp" class="custom-control-input" value="0" {% if data is defined and data['highbp'] == '0' %} checked {% endif %}>
           <label class="custom-control-label" for="customRadioInline10"> No </label>
         </div>
 
