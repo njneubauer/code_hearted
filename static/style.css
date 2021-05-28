@@ -8,4 +8,23 @@ body {
     color: white;
 }
 
-
+a.nav-link:link
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: white;
+   text-decoration: none;
+}
