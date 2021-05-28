@@ -74,9 +74,12 @@ def search():
     prob = calc_death_probability(data)
 
     print(f'Result: {prob[0][0]}')
-    
-    #Plug  Machine learning values to send to a results.html screen
-    return render_template('patient_calc.html', prob=prob[0][0])
+
+    patient_dict = {'age': age,  'sex': sex, 'smoker': smoker, 'anemic': anemia, 'diabetic': diabetes, 'high_blood_pressure': highbp}
+      
+    #Plug Machine learning values to send to  patient_calc.html screen
+    return render_template('patient_calc.html', data=patient_dict, prob=prob[0][0])
+
 
 if __name__ == "__main__":
     app.run(debug=True)
