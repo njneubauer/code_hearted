@@ -41,7 +41,7 @@ def clinical_data():
 
     print(clinical_data)
 
-    return render_template('clinical_calc.html', clinical_data=clinical_data)
+    return render_template('clinical_calc.html', prob=prob)
 
 @app.route('/patient_data', methods=['GET','POST'])
 def search():
@@ -63,8 +63,7 @@ def search():
     print(f'Result: {prob[0][0]}')
     
     #Plug  Machine learning values to send to a results.html screen
-    return render_template('patient_calc.html', data=data, prob=prob)
-
+    return render_template('patient_calc.html', prob=prob)
 
 if __name__ == "__main__":
     app.run(debug=True)
