@@ -75,7 +75,7 @@ def search():
 
     print(f'Result: {prob[0][0]}')
 
-    patient_dict = {'age': age,  'sex': sex, 'smoker': smoker, 'anemia': anemia, 'diabetes': diabetes, 'highpb': highbp}
+    patient_dict = {'age': age,  'sex': sex, 'smoker': smoker, 'anemia': anemia, 'diabetes': diabetes, 'highbp': highbp }
 
     #Plug Machine learning values to send to  patient_calc.html screen
     return render_template('patient_calc.html', data=patient_dict, prob=prob[0][0])
