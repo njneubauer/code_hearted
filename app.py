@@ -25,6 +25,10 @@ def clinical():
 def patient():
     return render_template('patient_calc.html')
 
+@app.route('/resources')
+def resources():
+    return render_template('resources.html')
+
 @app.route('/clinical_data', methods=['GET','POST'])
 def clinical_data():
     age = request.form['age']
