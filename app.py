@@ -8,6 +8,11 @@ def calc_death_probability(data):
     model = joblib.load("simple_model.sav")
     return model.predict_proba(data)
 
+def calc_death_probability(clinical_data):
+    model = joblib.load("complex_model.sav")
+    return model.predict_proba(clinical_data)
+
+
 @app.route("/")
 def home():
     return render_template('index.html')
@@ -19,6 +24,10 @@ def clinical():
 @app.route('/patient')
 def patient():
     return render_template('patient_calc.html')
+
+@app.route('/resources')
+def resources():
+    return render_template('resources.html')
 
 @app.route('/clinical_data', methods=['GET','POST'])
 def clinical_data():
@@ -40,8 +49,12 @@ def clinical_data():
     clinical_data = pd.DataFrame(clinical_data_dict, index=[0])
 
     print(clinical_data)
+    
+    prob_clinical = calc_death_probability(clinical_data)
 
-    return render_template('clinical_calc.html', clinical_data=clinical_data)
+    print(f'Result: {prob_clinical[0][0]}')
+
+    return render_template('clinical_calc.html', clinical_data=clinical_data, prob_clinical = prob_clinical)
 
 @app.route('/patient_data', methods=['GET','POST'])
 def search():
