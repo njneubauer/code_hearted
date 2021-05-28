@@ -4,11 +4,11 @@ import pandas as pd
 
 app = Flask(__name__)
 
-def calc_death_probability(data):
+def patient_death_probability(data):
     model = joblib.load("simple_model.sav")
     return model.predict_proba(data)
 
-def calc_death_probability(clinical_data):
+def clinical_death_probability(clinical_data):
     model = joblib.load("complex_model.sav")
     return model.predict_proba(clinical_data)
 
@@ -42,15 +42,15 @@ def clinical_data():
     sodium = request.form.get('sodium')
     office_vist = request.form.get('office_visit')
     
-    try:
-        clinical_data_dict = {'age':age, 'anemia':anemia, 'creatine_phosphokinase':creatine, 'diabetes':diabetes, 'ejection_fraction': ejection_fraction,'high_blood_pressure': hypertension, 
-                          'platelets':platelets, 'serum_creatinine':creatine, 'serum_sodium':sodium, 'sex':gender, 'smoking':smoker, 'time':office_vist}
     
+    clinical_data_dict = {'age':age, 'anemia':anemia, 'creatine_phosphokinase':creatine, 'diabetes':diabetes, 'ejection_fraction': ejection_fraction,'high_blood_pressure': hypertension, 
+                        'platelets':platelets, 'serum_creatinine':creatine, 'serum_sodium':sodium, 'sex':gender, 'smoking':smoker, 'time':office_vist}
+
     clinical_data = pd.DataFrame(clinical_data_dict, index=[0])
 
     print(clinical_data)
-    
-    prob_clinical = calc_death_probability(clinical_data)
+
+    prob_clinical = clinical_death_probability(clinical_data)
 
     print(f'Result: {prob_clinical[0][0]}')
 
@@ -71,7 +71,7 @@ def search():
 
     print(data)
 
-    prob = calc_death_probability(data)
+    prob = patient_death_probability(data)
 
     print(f'Result: {prob[0][0]}')
 
