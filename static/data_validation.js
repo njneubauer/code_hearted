@@ -7,8 +7,6 @@ function data_validation() {
     var anemia = document.forms['form']['anemia'].value
     var cp = document.forms['form']['creatine_phosphate'].value
     
-
-
     console.log(age)
 
     if(age == "" || age < 30 || age > 95){
