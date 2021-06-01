@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 import joblib
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 
@@ -50,7 +51,7 @@ def clinical_data():
 
     print(clinical_data)
 
-    prob_clinical = clinical_death_probability(clinical_data)
+    prob_clinical = clinical_death_probability(clinical_data) * 100
 
     print(f'Result: {prob_clinical[0][0]}')
 
@@ -71,9 +72,7 @@ def search():
 
     print(data)
 
-    prob = patient_death_probability(data)
-
-    print(f'Result: {prob[0][0]}')
+    prob =np.round(patient_death_probability(data) * 100,2)
 
     patient_dict = {'age': age,  'sex': sex, 'smoker': smoker, 'anemia': anemia, 'diabetes': diabetes, 'highbp': highbp }
     print(patient_dict)

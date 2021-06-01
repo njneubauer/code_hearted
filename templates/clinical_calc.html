@@ -100,28 +100,28 @@
                     <label class="custom-control-label" for="customRadioInline8">No</label>
                 </div>
             </div>
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Creatine Phosphate Level</label>
-                    <input type="text" class="form-control mb-2" id="creatine_phosphate" name="creatine_phosphate" placeholder="Normal Range 20-200">
+                    <input type="number" min="0" max="500" required="required" class="form-control mb-2" id="creatine_phosphate" name="creatine_phosphate" placeholder="Normal Range 20-200">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Ejection Fraction (%)</label>
-                    <input type="text" class="form-control mb-2" id="ejection_fraction" name='ejection_fraction' placeholder="Normal Range: 55-70">
+                    <input type="number" min="10" max="90" required="required" class="form-control mb-2" id="ejection_fraction" name='ejection_fraction' placeholder="Normal Range: 55-70">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Platelets</label>
-                    <input type="text" class="form-control mb-2" id="platelets" name='platelets' placeholder="Normal Range: 150k-450k">
+                    <input type="number" min="40" max="95" required="required" class="form-control mb-2" id="platelets" name='platelets' placeholder="Normal Range: 150k-450k">
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Serum Sodium</label>
-                    <input type="text" class="form-control mb-2" id="sodium" name='sodium' placeholder="Normal Range: 135-145">
+                    <input type="number" min="40" max="95" required="required" class="form-control mb-2" id="sodium" name='sodium' placeholder="Normal Range: 135-145">
                 </div>
             </div>
             <div class="row">
@@ -129,7 +129,7 @@
                     <label class="sr-only" for="inlineFormInput">Days since last office visit</label>
                     <input type="text" class="form-control mb-2" id="office_visit" name='office_visit' placeholder="">
                 </div>
-            </div> -->
+            </div>
             <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
     </form>
