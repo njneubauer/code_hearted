@@ -134,16 +134,16 @@
                     value="{%if input is defined %}{{ input['time'] }}{% endif %}">
                 </div>
             </div>
-
             <button class="btn btn-primary" onclick="showResult()" type="submit">Submit form</button>
         </div>
     </form>
     
-    <br>
-
-    <div class="col-8">
-        <h3>Estimated 1 year survival rate: {{ prob_clinical }}</h3>
+    <div class="container" style="margin-top: 20px;">
+        <div class="row">
+            <h3>Estimated 1 year survival rate: {{ prob_clinical }}</h3>
+        </div>
     </div>
+        
     
 
     <!-- Bootstrap Bundle with Popper -->
