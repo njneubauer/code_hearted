@@ -41,13 +41,13 @@
 
     <!-- Start - Age Row -->
     <!-- <div class="row"> -->
-    <p>&nbsp; {{ prob }}</p>
+    <p>&nbsp</p>
     
     <form action="/patient_data" method="POST">
       <div class="row">
-        <p class="col-4"> What is your Age? (40 - 95) </p>
+        <p class="col-4"> What is your Age? (30 - 100) </p>
         <div class="col-2 custom-control custom-radio custom-control-inline">
-          <input type="number" min="40" max="95" required="required" id="age" name="age" class="custom-control-input input" value="{%if data is defined %}{{ data['age'] }}{% endif %}">
+          <input type="number" min="30" max="100" required="required" id="age" name="age" class="custom-control-input input" value="{%if data is defined %}{{ data['age'] }}{% endif %}">
         </div>
       </div>
 
@@ -140,6 +140,9 @@
     </form>
     <!-- End - Hypertension -->
 
+    <div class="row">
+          <p>&nbsp;<h1> Life Expectancy is: {{ prob }} </h1></p>
+    </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

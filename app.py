@@ -51,7 +51,7 @@ def clinical_data():
 
     print(clinical_data)
 
-    prob_clinical = clinical_death_probability(clinical_data) * 100
+    prob_clinical = np.round(clinical_death_probability(clinical_data) * 100, 2)
 
     print(f'Result: {prob_clinical[0][0]}')
 
