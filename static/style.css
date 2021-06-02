@@ -27,3 +27,7 @@ a.nav-link:active
    color: white;
    text-decoration: none;
 }
+
+#myResult{
+   display: block;
+}
