@@ -9,22 +9,22 @@ body {
 
 a.nav-link:link
 {
-   color: white;
+   color: black;
    text-decoration: none;
 }
 a.nav-link:visited
 {
-   color: white;
+   color: black;
    text-decoration: none;
 }
 a.nav-link:hover
 {
-   color: white;
+   color: black;
    text-decoration: none;
 }
 a.nav-link:active
 {
-   color: white;
+   color: black;
    text-decoration: none;
 }
 
