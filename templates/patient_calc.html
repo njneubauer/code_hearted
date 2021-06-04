@@ -140,7 +140,7 @@
     </form>
     <!-- End - Hypertension -->
 
-    <div class="row">
+    <div class="row {% if prob is not defined %} hidden {% endif %}">
           <p>&nbsp;<h1> Life Expectancy is: {{ prob }} </h1></p>
     </div>
 

@@ -53,8 +53,6 @@ def clinical_data():
 
     prob_clinical = np.round(clinical_death_probability(clinical_data) * 100, 2)
 
-    print(f'Result: {prob_clinical[0][0]}')
-
     return render_template('clinical_calc.html', input=clinical_data_dict, prob_clinical = prob_clinical[0][0])
 
 @app.route('/patient_data', methods=['GET','POST'])
@@ -70,9 +68,7 @@ def search():
     
     data = pd.DataFrame(dict)
 
-    print(data)
-
-    prob =np.round(patient_death_probability(data) * 100,2)
+    prob = np.round(patient_death_probability(data) * 100,2)
 
     patient_dict = {'age': age,  'sex': sex, 'smoker': smoker, 'anemia': anemia, 'diabetes': diabetes, 'highbp': highbp }
     print(patient_dict)
