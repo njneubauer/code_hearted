@@ -28,6 +28,6 @@ a.nav-link:active
    text-decoration: none;
 }
 
-#myResult{
-   display: block;
+ .hidden {
+  display: none;
 }

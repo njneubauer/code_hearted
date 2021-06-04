@@ -140,8 +140,8 @@
     </form>
     <!-- End - Hypertension -->
 
-    <div class="row">
-          <p>&nbsp;<h1> Estimated 1 year survival rate: {{ prob }} </h1></p>
+    <div class="row {% if prob is not defined %} hidden {% endif %}">
+          <p>&nbsp;<h1> Life Expectancy is: {{ prob }} </h1></p>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
